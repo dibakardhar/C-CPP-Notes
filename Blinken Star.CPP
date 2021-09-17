@@ -1,0 +1,102 @@
+#include<conio.h>
+#include<graphics.h>
+#include<stdlib.h>
+#include<dos.h>
+void main()
+ {
+  int gdriver=DETECT,gmode;
+  int i,x,y;
+  initgraph(&gdriver,&gmode,"c://tc//bgi");
+  while(!kbhit())
+   {
+    x=random(640);
+    y=random(480);
+    setcolor(15);
+    for(i=1;i<10;i++)
+     {
+      circle(x,y,i);
+      delay(10);
+     }
+    setfillstyle(1,15);
+    line(x+8,y-2,x+40,y);
+    line(x+8,y+2,x+40,y);
+    floodfill(x+11,y,15);
+    line(x-8,y-2,x-40,y);
+    line(x-8,y+2,x-40,y);
+    floodfill(x-11,y,15);
+    line(x-2,y+8,x,y+40);
+    line(x+2,y+8,x,y+40);
+    floodfill(x,y+11,15);
+    line(x-2,y-8,x,y-40);
+    line(x+2,y-8,x,y-40);
+    floodfill(x,y-11,15);
+    line(x+8,y-2,x+20,y-20);
+    line(x+2,y-8,x+20,y-20);
+    floodfill(x+15,y-15,15);
+    line(x+8,y+2,x+20,y+20);
+    line(x+2,y+8,x+20,y+20);
+    floodfill(x+15,y+15,15);
+    line(x-8,y+2,x-20,y+20);
+    line(x-2,y+8,x-20,y+20);
+    floodfill(x-15,y+15,15);
+    line(x-8,y-2,x-20,y-20);
+    line(x-2,y-8,x-20,y-20);
+    floodfill(x-15,y-15,15);
+    sound(4000);
+    setcolor(0);
+    for(i=40;i>=10;i--)
+     {
+      line(x+8,y-2,x+i,y);
+      line(x+8,y+2,x+i,y);
+     }
+    for(i=40;i>=10;i--)
+     {
+      line(x-8,y-2,x-i,y);
+      line(x-8,y+2,x-i,y);
+     }
+    for(i=40;i>=10;i--)
+     {
+      line(x-2,y+8,x,y+i);
+      line(x+2,y+8,x,y+i);
+     }
+    for(i=40;i>=10;i--)
+     {
+      line(x-2,y-8,x,y-i);
+      line(x+2,y-8,x,y-i);
+     }
+    for(i=20;i>=7;i--)
+     {
+      line(x+8,y-2,x+i,y-i);
+      line(x+2,y-8,x+i,y-i);
+     }
+    for(i=20;i>=7;i--)
+     {
+      line(x+8,y+2,x+i,y+i);
+      line(x+2,y+8,x+i,y+i);
+     }
+    for(i=20;i>=7;i--)
+     {
+      line(x-8,y+2,x-i,y+i);
+      line(x-2,y+8,x-i,y+i);
+     }
+    for(i=20;i>=7;i--)
+     {
+      line(x-8,y-2,x-i,y-i);
+      line(x-2,y-8,x-i,y-i);
+     }
+    for(i=9;i>0;i--)
+     {
+      circle(x,y,i);
+      delay(10);
+     }
+    nosound();
+   }
+   cleardevice();
+   setcolor(2);
+   settextstyle(2,0,1);
+   outtextxy(220,160,"Creator:Dibakar Dhar");
+   outtextxy(265,235,"Bsc 3rd Year");
+   outtextxy(210,335,"Email: dibakar.x01.dhar@gmail.comf");
+   getch();
+getch();
+ }
